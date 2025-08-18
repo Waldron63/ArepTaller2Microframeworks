@@ -100,14 +100,13 @@ public class HttpServer {
     
     private static void makeGetRequest(String path, OutputStream out) throws IOException {
         String savedName = names.getOrDefault("name", "usuario");
-        // Verificar si se pasó un nombre en la URL como parámetro
         String queryParams = path.split("\\?").length > 1 ? path.split("\\?")[1] : "";
         String[] params = queryParams.split("&");
 
         for (String param : params) {
             if (param.startsWith("name=")) {
                 String name = param.split("=")[1];
-                names.put("name", name); // Guardar el nombre en el dataStore
+                names.put("name", name);
                 savedName = name;
             }
         }
@@ -117,7 +116,7 @@ public class HttpServer {
 
         String header = "HTTP/1.1 200 OK\r\n" +
                 "Content-Type: application/json\r\n" +
-                "Content-Length: " + responseBytes.length + "\r\n" +
+                "Conten-Length: " + responseBytes.length + "\r\n" +
                 "\r\n";
 
         out.write(header.getBytes());
@@ -167,10 +166,10 @@ public class HttpServer {
 
     private static void error404(OutputStream out) throws IOException {
         String message = "<h1>404 Not Found</h1>";
-        String header = "HTTP/1.1 404 Not Found\n\r"
-                    + "content-type: text/html\n\r"
-                    + "content-length: " + message.length() + "\n\r"
-                    + "\n\r";
+        String header = "HTTP/1.1 404 Not Found\r\n"
+                    + "content-type: text/html\r\n"
+                    + "content-length: " + message.length() + "\r\n"
+                    + "\r\n";
         out.write(header.getBytes());
         out.write(message.getBytes());
     }
@@ -178,12 +177,16 @@ public class HttpServer {
     private static void headers(OutputStream out, String content, File file) throws IOException{
         String outputLine;
         byte[] contentByte = Files.readAllBytes(file.toPath());
-        outputLine =  "HTTP/1.1 200 OK\n\r"
-            + "content-type: " + content + "\n\r"
-            + "content-length: " + contentByte.length + "\n\r"
-            + "\n\r";
+        outputLine =  "HTTP/1.1 200 OK\r\n"
+            + "content-type: " + content + "\r\n"
+            + "content-length: " + contentByte.length + "\r\n"
+            + "\r\n";
         out.write(outputLine.getBytes());
         out.write(contentByte);
             
+    }
+    
+    public static Map<String, String> getNames(){
+        return names;
     }
 }

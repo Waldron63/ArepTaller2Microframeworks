@@ -71,3 +71,16 @@ input[type="text"] {
     font-weight: bold;
     font-size: 14px;
 }
+
+.home-container {
+    text-align: center;
+    background: #ffffffcc;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 150, 136, 0.3);
+}
+
+.home-img {
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
