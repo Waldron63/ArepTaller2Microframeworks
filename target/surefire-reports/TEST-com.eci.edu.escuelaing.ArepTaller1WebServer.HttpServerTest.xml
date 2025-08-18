@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.338" tests="8" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.119" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="CO"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="D:\Java\21\bin"/>
-    <property name="sun.java.command" value="C:\Users\Santiago\AppData\Local\Temp\surefire10680128225591689199\surefirebooter-20250818131945912_3.jar C:\Users\Santiago\AppData\Local\Temp\surefire10680128225591689199 2025-08-18T13-19-45_529-jvmRun1 surefire-20250818131945912_1tmp surefire_0-20250818131945912_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Santiago\AppData\Local\Temp\surefire8493396677912159720\surefirebooter-20250818175556090_3.jar C:\Users\Santiago\AppData\Local\Temp\surefire8493396677912159720 2025-08-18T17-55-55_891-jvmRun1 surefire-20250818175556090_1tmp surefire_0-20250818175556090_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest"/>
     <property name="surefire.test.class.path" value="D:\Universidad\AREP\ArepTaller1WebServer\target\test-classes;D:\Universidad\AREP\ArepTaller1WebServer\target\classes;C:\Users\Santiago\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.3\junit-jupiter-api-5.10.3.jar;C:\Users\Santiago\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Santiago\.m2\repository\org\junit\platform\junit-platform-commons\1.10.3\junit-platform-commons-1.10.3.jar;C:\Users\Santiago\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Santiago\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.3\junit-jupiter-params-5.10.3.jar;C:\Users\Santiago\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.3\junit-jupiter-engine-5.10.3.jar;C:\Users\Santiago\.m2\repository\org\junit\platform\junit-platform-engine\1.10.3\junit-platform-engine-1.10.3.jar;"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Santiago\AppData\Local\Temp\surefire10680128225591689199\surefirebooter-20250818131945912_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Santiago\AppData\Local\Temp\surefire8493396677912159720\surefirebooter-20250818175556090_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.3+7-LTS-152"/>
@@ -60,41 +60,41 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="shouldGetRequestForm" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.152">
+  <testcase name="shouldGetRequestForm" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.056">
     <system-out><![CDATA[Path: src/main/java/com/eci/edu/escuelaing/ArepTaller1WebServer/resources/form.html
 Received: GET /form.html HTTP/1.1
 Received: Content-Length: 0
 Received: 
 ]]></system-out>
   </testcase>
-  <testcase name="shouldGetRequestName" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.014"/>
-  <testcase name="shouldNotGetRequest" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.003">
+  <testcase name="shouldGetRequestName" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.006"/>
+  <testcase name="shouldNotGetRequest" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.002">
     <system-out><![CDATA[Path: src/main/java/com/eci/edu/escuelaing/ArepTaller1WebServer/resources/noexiste.html
 ]]></system-out>
   </testcase>
-  <testcase name="shouldPostRequestName" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.003"/>
-  <testcase name="shouldGetRequestScript" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.013">
+  <testcase name="shouldPostRequestName" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.002"/>
+  <testcase name="shouldGetRequestScript" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.002">
     <system-out><![CDATA[Path: src/main/java/com/eci/edu/escuelaing/ArepTaller1WebServer/resources/script.js
 Received: GET /script.js HTTP/1.1
 Received: Content-Length: 0
 Received: 
 ]]></system-out>
   </testcase>
-  <testcase name="shouldGetRequestStyles" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.017">
+  <testcase name="shouldGetRequestStyles" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.002">
     <system-out><![CDATA[Path: src/main/java/com/eci/edu/escuelaing/ArepTaller1WebServer/resources/styles.css
 Received: GET /styles.css HTTP/1.1
 Received: Content-Length: 0
 Received: 
 ]]></system-out>
   </testcase>
-  <testcase name="shouldGetRequestImage" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.018">
+  <testcase name="shouldGetRequestImage" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.003">
     <system-out><![CDATA[Path: src/main/java/com/eci/edu/escuelaing/ArepTaller1WebServer/resources/image.png
 Received: GET /image.png HTTP/1.1
 Received: Content-Length: 0
 Received: 
 ]]></system-out>
   </testcase>
-  <testcase name="shouldGetRequestIndex" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.012">
+  <testcase name="shouldGetRequestIndex" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.003">
     <system-out><![CDATA[Path: src/main/java/com/eci/edu/escuelaing/ArepTaller1WebServer/resources/index.html
 Received: GET /index.html HTTP/1.1
 Received: Content-Length: 0
