@@ -11,7 +11,7 @@
         <maven.compiler.target>21</maven.compiler.target>
         <exec.mainClass>com.eci.edu.escuelaing.taller1santiagogualdron.Taller1SantiagoGualdron</exec.mainClass>
     </properties>
-    <name>ArepTaller1WebServer</name>
+    <name>ArepTaller2Microframeworks</name>
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>

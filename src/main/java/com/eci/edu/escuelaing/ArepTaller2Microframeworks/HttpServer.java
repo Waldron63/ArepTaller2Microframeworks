@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.eci.edu.escuelaing.ArepTaller1WebServer;
+package com.eci.edu.escuelaing.ArepTaller2Microframeworks;
 
 import java.net.*;
 import java.io.*;
@@ -15,10 +15,11 @@ import java.util.Map;
  */
 public class HttpServer {
     
-    private static final String directory = "src/main/java/com/eci/edu/escuelaing/ArepTaller1WebServer/resources";
+    private static String directory = "src/main/java/com/eci/edu/escuelaing/ArepTaller1WebServer/resources";
     private static final Map<String, String> names = new HashMap<>();
+    public static Map<String, Service> services = new HashMap<>();
 
-    public static void main(String[] args) throws IOException, URISyntaxException {
+    public static void startServer(String[] args) throws IOException, URISyntaxException {
         ServerSocket serverSocket = null;
         try {
             serverSocket = new ServerSocket(35000);
@@ -48,46 +49,28 @@ public class HttpServer {
              OutputStream out = clientSocket.getOutputStream()){
             String inputLine, path;
 
-            boolean isFirstLine = true;
-            URI requestUri = null;
+            URI requestUri;
             String content = "", method;
-            File file = null;
             String[] head;
             while ((inputLine = in.readLine()) != null) {
-                if (isFirstLine){
-                    head = inputLine.split(" ");
-                    requestUri = new URI(head[1]);
-                    method = head[0];
-                    path = requestUri.getPath();
-                    if (path.equals("/")){
-                        path = "/index.html";
-                    }
-                    if (path.contains("..")){
-                        error404(out);
-                        return;
-                    }else if (method.equals("GET") && path.contains("/getName")) {
-                        makeGetRequest(head[1], out);
-                        return;
-                    } else if (method.equals("POST") && path.contains("/updateName")) {
-                        makePostRequest(in, head[1], out);
-                        return;
-                    }
-                    System.out.println("Path: " + directory + path);
-                    file = new File(directory + path);
-                    content = getContentType(path);
-                    isFirstLine = false;
-                    
-                    if (content == null || !file.exists() || file.isDirectory()){
-                        error404(out);
-                        return;
-                    }
+                head = inputLine.split(" ");
+                requestUri = new URI(head[1]);
+                method = head[0];
+                path = requestUri.getPath();
+                if (path.equals("/")){
+                    head[1] = "/index.html";
                 }
-                System.out.println("Received: " + inputLine);
-                if (!in.ready()) {
-                    break;
+                if (path.contains("..")){
+                    error404(out);
+                    return;
+                }else if (method.equals("GET")) {
+                    makeGetRequest(head[1], out);
+                    return;
+                } else if (method.equals("POST") && path.contains("/updateName")) {
+                    makePostRequest(in, head[1], out);
+                    return;
                 }
             }
-            headers(out, content, file);
             out.flush();
             out.close();
             in.close();
@@ -99,29 +82,41 @@ public class HttpServer {
     }
     
     private static void makeGetRequest(String path, OutputStream out) throws IOException {
-        String savedName = names.getOrDefault("name", "usuario");
-        String queryParams = path.split("\\?").length > 1 ? path.split("\\?")[1] : "";
-        String[] params = queryParams.split("&");
+        System.out.println("Path: " + directory + path);
+        String basePath = path.split("\\?")[0];
+        String header;
+        if (services.containsKey(basePath)){
 
-        for (String param : params) {
-            if (param.startsWith("name=")) {
-                String name = param.split("=")[1];
-                names.put("name", name);
-                savedName = name;
+            HttpRequest req = new HttpRequest(path);
+            HttpResponse res = new HttpResponse(out);
+
+            String responseBody = services.get(basePath).executeService(req, res);
+
+            header = "HTTP/1.1 200 OK\r\n" +
+                    "Content-Type: application/json\r\n" +
+                    "\r\n";
+
+            out.write(header.getBytes());
+            out.write(responseBody.getBytes());
+            out.flush();
+            return ;
+        }else{
+            File file = new File(directory + path);
+            if (file.exists() && !file.isDirectory()) {
+                try {
+                    String content = getContentType(path);
+                    headers(out, content, file);
+                    out.flush();
+                } catch (IOException e) {
+                    out.write("HTTP/1.1 500 Internal Server Error".getBytes());
+                    System.err.println("Error al enviar el archivo " + path + ": " + e.getMessage());
+                }
+            } else {
+                error404(out);
+                System.err.println("Archivo no encontrado: " + path);
             }
         }
 
-        String jsonResponse = "{\"name\": \"" + savedName + "\"}";
-        byte[] responseBytes = jsonResponse.getBytes();
-
-        String header = "HTTP/1.1 200 OK\r\n" +
-                "Content-Type: application/json\r\n" +
-                "Conten-Length: " + responseBytes.length + "\r\n" +
-                "\r\n";
-
-        out.write(header.getBytes());
-        out.write(responseBytes);
-        out.flush();
     }
     
     private static void makePostRequest(BufferedReader in, String path, OutputStream out) throws IOException{
@@ -188,5 +183,14 @@ public class HttpServer {
     
     public static Map<String, String> getNames(){
         return names;
+    }
+    
+    
+    public static void get(String route, Service s){
+        services.put(route, s);
+    }
+    
+    public static void staticfiles(String path){
+        directory = path;
     }
 }
