@@ -15,7 +15,7 @@ import java.util.Map;
  */
 public class HttpServer {
     
-    private static String directory = "src/main/java/com/eci/edu/escuelaing/ArepTaller1WebServer/resources";
+    private static String directory = "src/main/java/com/eci/edu/escuelaing/ArepTaller2Microframeworks/resources";
     private static final Map<String, String> names = new HashMap<>();
     public static Map<String, Service> services = new HashMap<>();
 
@@ -185,6 +185,9 @@ public class HttpServer {
         return names;
     }
     
+    public static Map<String, Service> getServices(){
+        return services;
+    }
     
     public static void get(String route, Service s){
         services.put(route, s);
@@ -192,5 +195,9 @@ public class HttpServer {
     
     public static void staticfiles(String path){
         directory = path;
+    }
+    
+    public static String getDirectory(){
+        return directory;
     }
 }

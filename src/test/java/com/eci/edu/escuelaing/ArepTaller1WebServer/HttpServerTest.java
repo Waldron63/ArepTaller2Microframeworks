@@ -8,7 +8,6 @@ import com.eci.edu.escuelaing.ArepTaller2Microframeworks.HttpServer;
 import java.io.*;
 import java.net.Socket;
 import java.net.URISyntaxException;
-import java.util.HashMap;
 import java.util.Map;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;

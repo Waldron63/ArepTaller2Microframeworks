@@ -17,16 +17,25 @@ import java.net.URISyntaxException;
 public class ArepTaller2Microframeworks {
 
     public static void main(String[] args) throws IOException, URISyntaxException {
-        staticfiles("src/main/java/com/eci/edu/escuelaing/ArepTaller1WebServer/resources");
-        get("/hello", (request, respond) -> {
-            String name = request.getValues("name");
+        staticfiles("src/main/java/com/eci/edu/escuelaing/ArepTaller2Microframeworks/resources");
+        get("/hello", (req, resp) -> {
+            String name = req.getValues("name");
             if (name == null || name.isEmpty()) {
                 name = "usuario";
             }
             return "Hola " + name ;
         });
+        
         get("/pi", (req, resp) -> {
             return String.valueOf(Math.PI); 
+        });
+        
+        get("/music", (req, resp) -> {
+            String music = req.getValues("music");
+            if (music == null || music.isEmpty()) {
+                return "No tienes musica preferida!";
+            }
+            return "Tu musica favorita es: " + music ;
         });
         startServer(args);
     }

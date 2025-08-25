@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.119" tests="8" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.174" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="D:\Universidad\AREP\ArepTaller1WebServer\target\test-classes;D:\Universidad\AREP\ArepTaller1WebServer\target\classes;C:\Users\Santiago\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.3\junit-jupiter-api-5.10.3.jar;C:\Users\Santiago\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Santiago\.m2\repository\org\junit\platform\junit-platform-commons\1.10.3\junit-platform-commons-1.10.3.jar;C:\Users\Santiago\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Santiago\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.3\junit-jupiter-params-5.10.3.jar;C:\Users\Santiago\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.3\junit-jupiter-engine-5.10.3.jar;C:\Users\Santiago\.m2\repository\org\junit\platform\junit-platform-engine\1.10.3\junit-platform-engine-1.10.3.jar;"/>
+    <property name="java.class.path" value="D:\Universidad\AREP\ArepTaller2Microframeworks\target\test-classes;D:\Universidad\AREP\ArepTaller2Microframeworks\target\classes;C:\Users\Santiago\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.3\junit-jupiter-api-5.10.3.jar;C:\Users\Santiago\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Santiago\.m2\repository\org\junit\platform\junit-platform-commons\1.10.3\junit-platform-commons-1.10.3.jar;C:\Users\Santiago\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Santiago\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.3\junit-jupiter-params-5.10.3.jar;C:\Users\Santiago\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.3\junit-jupiter-engine-5.10.3.jar;C:\Users\Santiago\.m2\repository\org\junit\platform\junit-platform-engine\1.10.3\junit-platform-engine-1.10.3.jar;"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -12,13 +12,12 @@
     <property name="user.timezone" value="America/Bogota"/>
     <property name="os.name" value="Windows 11"/>
     <property name="java.vm.specification.version" value="21"/>
-    <property name="user.country" value="CO"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="CO"/>
     <property name="sun.boot.library.path" value="D:\Java\21\bin"/>
-    <property name="sun.java.command" value="C:\Users\Santiago\AppData\Local\Temp\surefire8493396677912159720\surefirebooter-20250818175556090_3.jar C:\Users\Santiago\AppData\Local\Temp\surefire8493396677912159720 2025-08-18T17-55-55_891-jvmRun1 surefire-20250818175556090_1tmp surefire_0-20250818175556090_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Santiago\AppData\Local\Temp\surefire10691693254617875606\surefirebooter-20250824212555107_3.jar C:\Users\Santiago\AppData\Local\Temp\surefire10691693254617875606 2025-08-24T21-25-54_937-jvmRun1 surefire-20250824212555107_1tmp surefire_0-20250824212555107_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="test" value="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest"/>
-    <property name="surefire.test.class.path" value="D:\Universidad\AREP\ArepTaller1WebServer\target\test-classes;D:\Universidad\AREP\ArepTaller1WebServer\target\classes;C:\Users\Santiago\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.3\junit-jupiter-api-5.10.3.jar;C:\Users\Santiago\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Santiago\.m2\repository\org\junit\platform\junit-platform-commons\1.10.3\junit-platform-commons-1.10.3.jar;C:\Users\Santiago\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Santiago\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.3\junit-jupiter-params-5.10.3.jar;C:\Users\Santiago\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.3\junit-jupiter-engine-5.10.3.jar;C:\Users\Santiago\.m2\repository\org\junit\platform\junit-platform-engine\1.10.3\junit-platform-engine-1.10.3.jar;"/>
+    <property name="surefire.test.class.path" value="D:\Universidad\AREP\ArepTaller2Microframeworks\target\test-classes;D:\Universidad\AREP\ArepTaller2Microframeworks\target\classes;C:\Users\Santiago\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.3\junit-jupiter-api-5.10.3.jar;C:\Users\Santiago\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Santiago\.m2\repository\org\junit\platform\junit-platform-commons\1.10.3\junit-platform-commons-1.10.3.jar;C:\Users\Santiago\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Santiago\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.3\junit-jupiter-params-5.10.3.jar;C:\Users\Santiago\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.3\junit-jupiter-engine-5.10.3.jar;C:\Users\Santiago\.m2\repository\org\junit\platform\junit-platform-engine\1.10.3\junit-platform-engine-1.10.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\Santiago"/>
     <property name="user.language" value="es"/>
@@ -26,12 +25,12 @@
     <property name="java.version.date" value="2024-04-16"/>
     <property name="java.home" value="D:\Java\21"/>
     <property name="file.separator" value="\"/>
-    <property name="basedir" value="D:\Universidad\AREP\ArepTaller1WebServer"/>
+    <property name="basedir" value="D:\Universidad\AREP\ArepTaller2Microframeworks"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Santiago\AppData\Local\Temp\surefire8493396677912159720\surefirebooter-20250818175556090_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Santiago\AppData\Local\Temp\surefire10691693254617875606\surefirebooter-20250824212555107_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.3+7-LTS-152"/>
@@ -42,12 +41,11 @@
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
-    <property name="maven.ext.class.path" value="D:\Aplicativos\NetBeans\netbeans\java\maven-nblib\netbeans-eventspy.jar"/>
     <property name="localRepository" value="C:\Users\Santiago\.m2\repository"/>
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="java.io.tmpdir" value="C:\Users\Santiago\AppData\Local\Temp\"/>
     <property name="java.version" value="21.0.3"/>
-    <property name="user.dir" value="D:\Universidad\AREP\ArepTaller1WebServer"/>
+    <property name="user.dir" value="D:\Universidad\AREP\ArepTaller2Microframeworks"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
@@ -60,45 +58,37 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="shouldGetRequestForm" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.056">
-    <system-out><![CDATA[Path: src/main/java/com/eci/edu/escuelaing/ArepTaller1WebServer/resources/form.html
-Received: GET /form.html HTTP/1.1
-Received: Content-Length: 0
-Received: 
+  <testcase name="shouldGetRequestForm" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.086">
+    <system-out><![CDATA[Path: src/main/java/com/eci/edu/escuelaing/ArepTaller2Microframeworks/resources/form.html
 ]]></system-out>
   </testcase>
-  <testcase name="shouldGetRequestName" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.006"/>
-  <testcase name="shouldNotGetRequest" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.002">
-    <system-out><![CDATA[Path: src/main/java/com/eci/edu/escuelaing/ArepTaller1WebServer/resources/noexiste.html
+  <testcase name="shouldGetRequestName" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.006">
+    <system-out><![CDATA[Path: src/main/java/com/eci/edu/escuelaing/ArepTaller2Microframeworks/resources/getName
+]]></system-out>
+    <system-err><![CDATA[Archivo no encontrado: /getName
+]]></system-err>
+  </testcase>
+  <testcase name="shouldNotGetRequest" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.001">
+    <system-out><![CDATA[Path: src/main/java/com/eci/edu/escuelaing/ArepTaller2Microframeworks/resources/noexiste.html
+]]></system-out>
+    <system-err><![CDATA[Archivo no encontrado: /noexiste.html
+]]></system-err>
+  </testcase>
+  <testcase name="shouldPostRequestName" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.008"/>
+  <testcase name="shouldGetRequestScript" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.015">
+    <system-out><![CDATA[Path: src/main/java/com/eci/edu/escuelaing/ArepTaller2Microframeworks/resources/script.js
 ]]></system-out>
   </testcase>
-  <testcase name="shouldPostRequestName" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.002"/>
-  <testcase name="shouldGetRequestScript" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.002">
-    <system-out><![CDATA[Path: src/main/java/com/eci/edu/escuelaing/ArepTaller1WebServer/resources/script.js
-Received: GET /script.js HTTP/1.1
-Received: Content-Length: 0
-Received: 
+  <testcase name="shouldGetRequestStyles" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.006">
+    <system-out><![CDATA[Path: src/main/java/com/eci/edu/escuelaing/ArepTaller2Microframeworks/resources/styles.css
 ]]></system-out>
   </testcase>
-  <testcase name="shouldGetRequestStyles" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.002">
-    <system-out><![CDATA[Path: src/main/java/com/eci/edu/escuelaing/ArepTaller1WebServer/resources/styles.css
-Received: GET /styles.css HTTP/1.1
-Received: Content-Length: 0
-Received: 
-]]></system-out>
-  </testcase>
-  <testcase name="shouldGetRequestImage" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.003">
-    <system-out><![CDATA[Path: src/main/java/com/eci/edu/escuelaing/ArepTaller1WebServer/resources/image.png
-Received: GET /image.png HTTP/1.1
-Received: Content-Length: 0
-Received: 
+  <testcase name="shouldGetRequestImage" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.01">
+    <system-out><![CDATA[Path: src/main/java/com/eci/edu/escuelaing/ArepTaller2Microframeworks/resources/image.png
 ]]></system-out>
   </testcase>
   <testcase name="shouldGetRequestIndex" classname="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServerTest" time="0.003">
-    <system-out><![CDATA[Path: src/main/java/com/eci/edu/escuelaing/ArepTaller1WebServer/resources/index.html
-Received: GET /index.html HTTP/1.1
-Received: Content-Length: 0
-Received: 
+    <system-out><![CDATA[Path: src/main/java/com/eci/edu/escuelaing/ArepTaller2Microframeworks/resources/index.html
 ]]></system-out>
   </testcase>
 </testsuite>
