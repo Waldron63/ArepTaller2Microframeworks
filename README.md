@@ -96,6 +96,8 @@ donde:
 
 ## Reporte de pruebas
 
+**NOTA:** Si se desean correr las pruebas unitarias, es recomentable tener el servidor apagado y el puerto 35000 libre, de lo contrario puede generar error
+
 ### fecha
 
 Fecha: 24/08/2025
