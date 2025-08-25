@@ -1,16 +1,13 @@
-# Taller diseño y estructuración de aplicaciones distribuidas en internet
+# Web Framework Development for REST Services and Static File Management
 
-En este taller, se hizo la implementacion de un servidor web local que soporta múlltiples solicitudes seguidas no concurrentes, utilizando el lenguaje JAVA para la estructura base; HTML, CSS y JS para el desarrollo de una aplicación web básica y sin el uso de frameworks web como Spark o Spring.
-
-El servidor web fue diseñado para obtener peticiones http (con solicitudes GET y POST), para que pueda procesar extenciones tipo: .html, .js, .css, .png o .jpg.
-Si el servidor recibe alguna otra petición diferente a las ya nombradas, devolverá un mensaje con *error 404* para evitar casos bordes.
+La intención de este taller, es mostrar el desarrollo para la implementacion de servicios REST utilizando funciones lambda, implementandolas en el servidor previamente hecho (mas infomación en [ArepTaller1WebServer](https://github.com/Waldron63/ArepTaller1WebServer)) con el objetivo de mejorarlo y que el desarrollador tenga herramientas para utilizar peticiones dinámicas y archivos estáticos.
 
 ## Contenidos iniciales
 
-El servidor web tiene 3 casos importantes a ser tratados para su desarrollo completo:
-- Servidor web: Desarrollo implementado en JAVA para recibir peticiones HTTP tanto GET como POST
-- programas estáticos: desarrollo de aplicación web básica, con una navegación simple hecho en HTML, CSS y JS que manda peticiones REST al servidor
-- Peticiones Rest: comunicación asincrónica del servidor para recibir en cualquier momento las peticiones dadas por la aplicación web, sin el uso de frameworks webs.
+las nuevas implementaciones al desarrollo web son:
+- Método GET:  Definir rutas en la URL para servicios REST.
+- Extracción de Parámetros: Obtener parámetros de las solicitudes o URL.
+- Archivos Estáticos: Especificar la carpeta donde se encuentran los archivos estáticos HTML, CSS, JS, PNG, etc.
 
 ### Prerrequisitos
 
@@ -33,8 +30,8 @@ Para el correcto uso del servidor, es necesario tener las siguientes aplicacione
 1. clonar el repositorio con el siguiente comando y ingresar a la carpeta en donde esta incluido el *pom.xml*:
 
    ```sh
-   git clone https://github.com/Waldron63/ArepTaller1WebServer.git
-   cd ArepTaller1WebServer
+   git clone https://github.com/Waldron63/ArepTaller2Microframeworks.git
+   cd ArepTaller2Microframeworks
    ```
 
 2. Construir el proyecto:
@@ -43,12 +40,13 @@ Para el correcto uso del servidor, es necesario tener las siguientes aplicacione
    mvn clean package
    ```
   La consola mostrará información parecida a:
-  <img width="1464" height="355" alt="image" src="https://github.com/user-attachments/assets/3ce31905-79e9-40e1-95db-d21aa4e9c484" />
+  
+  <img width="1358" height="236" alt="image" src="https://github.com/user-attachments/assets/f3ae98c7-5748-4f4a-8aba-2cbd18f0e688" />
   
 3. Correr la aplicación:
 
    ```sh
-   mvn exec:java -Dexec.mainClass="com.eci.edu.escuelaing.ArepTaller1WebServer.HttpServer"
+   mvn exec:java -Dexec.mainClass="com.eci.edu.escuelaing.ArepTaller2Microframeworks.ArepTaller2Microframeworks"
    ```
 
    La consola debería mostrar el siguiente mensaje:
@@ -56,62 +54,86 @@ Para el correcto uso del servidor, es necesario tener las siguientes aplicacione
    ```sh
    Listo para recibir ...
    ```
-  Una vez iniciado, en el buscador ingresar: "http://localhost:35000/" o "http://localhost:35000/index.html" y lo llevará a la página inicial del proyecto:
-  
-<img width="1919" height="961" alt="image" src="https://github.com/user-attachments/assets/5c085ab6-c79b-49d6-9c27-8ddfd415b5d4" />
+
+   - Página principal:
+     Una vez iniciado, en el buscador ingresar: "http://localhost:35000/" o "http://localhost:35000/index.html" y lo llevará a la página inicial del proyecto:
+
+     <img width="1919" height="961" alt="image" src="https://github.com/user-attachments/assets/5c085ab6-c79b-49d6-9c27-8ddfd415b5d4" />
+
+   - Archivos estáticos:
+     Ingresar alguno de los siguientes comandos para mirar cada archivo estático
+     ```bash
+       http://localhost:35000/imgage.png
+       http://localhost:35000/styles.css
+       http://localhost:35000/script.js
+       http://localhost:35000/form.html
+       http://localhost:35000/index.html
+     ```
+   - servicios Rest:
+     Ingresar alguno de los siguientes comandos para mirar cada servicio
+     ```bash
+       http://localhost:35000/hello?name=Santiago
+       http://localhost:35000/pi
+       http://localhost:35000/music?music=Rock
+     ```
 
 ## Arquitectura
 
+<img width="995" height="565" alt="image" src="https://github.com/user-attachments/assets/b6db5e94-c404-4a14-8f2d-12bba2cc08bf" />
+
 La estructura del directorio del proyecto es:
-<img width="1127" height="675" alt="image" src="https://github.com/user-attachments/assets/639f65e0-10d7-4072-b25b-08b352d2e0c1" />
+
+<img width="939" height="674" alt="image" src="https://github.com/user-attachments/assets/ffd7ebe1-c875-4920-88fe-f30285ff4316" />
+
 donde:
-- ArepTaller1WebServer.java: programa de ejecución base (se puede ignorar)
-- HttpServer.java: programa del servidor principal para iniciar.
-- Resources/*: aplicación web con los prerrequisitos pedidos (html, js, css y png).
-- HttpServerTest.java: pruebas test del servidor para un funcionamiento correcto
+
+- ArepTaller2Microframeworks.java: programa de ejecución base.
+- HttpServer.java: programa del servidor principal.
+- HttpRequest, HttpResponse, Server: programas para el correcto funcionamiento de los servicios Rest.
+- Resources/*: aplicación web(html, js, css y png).
+- HttpServerTest.java: pruebas test del servidor para un funcionamiento correcto.
+- main.java: pruebas test del servicio Rest para un funcionamiento correcto.
 
 ## Reporte de pruebas
 
 ### fecha
 
-Fecha: 12/08/2025
+Fecha: 24/08/2025
 
 ### Pruebas unitarias:
 
-<img width="1467" height="307" alt="image" src="https://github.com/user-attachments/assets/052fdc5a-b323-4156-b41f-305924b5051a" />
+<img width="1460" height="304" alt="image" src="https://github.com/user-attachments/assets/b12417ca-bdf8-4f5f-ae92-043dd5f7e003" />
 
-donde cada prueba unitaria sirve para:
-- shouldNotGetRequest(): revisar que funciona *error 404* mandandole una uri inconrrecta.
-- shouldGetRequestIndex(): comprobar que funciona el estándar o index principal de la aplicación web.
-- shouldGetRequestName(): revisar que acepta una petición GET con el nombre del usuario (en blanco y lleno)
-- shouldGetRequestImage(): comprueba que el servidor acepta formato png y jpg.
-- shouldGetRequestScript(): comprueba que el servidor acepta formato js.
-- shouldGetRequestStyles(): comprueba que el servidor acepta formato css.
-- shouldGetRequestForm(): comprueba que el servidor acepta formato html.
-- shouldPostRequestName(): revisar que acepta una petición POST con el nuevo nombre del usuario (el mismo y diferente)
+donde cada prueba unitaria (del archivo mainTest, las pruebas de HttpServerTest no cambiaron de la anterior versión) sirve para:
+- shouldGetRestPi(): muestra que envía el servicio Rest Get Pi; donde devuelve el numero Pi.
+- shouldGetRestMusicWithParam(): muestra que envía el servicio Rest Get Music; donde devuelve el género ingresado por el usuario.
+- shouldGetRestNameWithParam(): muestra que envía el servicio Rest Get Hello; donde devuelve el nombre ingresado por el usuario.
+- shouldGetRestMusic(): muestra que envía el servicio Rest Get Music; donde devuelve el mensaje predeterminado si no se envia parametro.
+- shouldGetRestName():  muestra que envía el servicio Rest Get Hello; donde devuelve el mensaje predeterminado si no se envia parametro.
+- shouldLoadStaticFileIndex(): muestra que aun funciona la búsqueda del archivo estático: intex.html
+- shouldLoadStaticFileForm(): muestra que aun funciona la búsqueda del archivo estático: form.html
+- shouldLoadStaticFileImage(): muestra que aun funciona la búsqueda del archivo estático: image.png     
+- shouldLoadStaticFileScript(): muestra que aun funciona la búsqueda del archivo estático: script.js
+- shouldLoadStaticFileStyle(): muestra que aun funciona la búsqueda del archivo estático: styles.css
 
 ### Pruebas de aceptación
 
 - index.html:
   
   <img width="1560" height="950" alt="image" src="https://github.com/user-attachments/assets/deace7f1-80e0-456c-badd-4a6c64049f51" />
-  
-- script.js:
-  
-  <img width="1224" height="914" alt="image" src="https://github.com/user-attachments/assets/b32f0fe3-1ef8-47e8-b09c-6a2e491ad9d8" />
-  
-- styles.css:
-  
-  <img width="891" height="947" alt="image" src="https://github.com/user-attachments/assets/5d0d0fc9-760b-404b-b656-70a7d0257be7" />
-  
-- image.png:
-  
-  <img width="1563" height="820" alt="image" src="https://github.com/user-attachments/assets/a1f13b66-b87d-4220-b083-9c1cda4264df" />
-  
-- form.html (enviando petición GET y POST):
-  
-  <img width="1518" height="860" alt="image" src="https://github.com/user-attachments/assets/7ded5ea0-6f15-4852-8f56-7666ff4e98ba" />
 
+- servicio rest Pi:
+
+  <img width="610" height="138" alt="image" src="https://github.com/user-attachments/assets/54c3f223-a518-4eb0-8294-254dc6079fd7" />
+
+- servicio rest Hello:
+
+  <img width="695" height="137" alt="image" src="https://github.com/user-attachments/assets/bdf44a31-4468-4184-9a13-d392a3c3aebd" />
+
+- servicio rest Music:
+
+  <img width="587" height="150" alt="image" src="https://github.com/user-attachments/assets/d5e85dc8-6bbd-49bb-9f04-82ae0acac81d" />
+  
 ## Construido con
 
 [Maven](https://maven.apache.org/index.html) - Dependency Management
